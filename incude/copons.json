@@ -1,0 +1,32 @@
+[
+  {
+    "cp": "6ZAZTNEZ1",
+    "discountPerc": -10,
+    "valideTo": "2022-05-23"
+  },
+  {
+    "cp": "3NYTZNEF2",
+    "discountPerc": -15,
+    "valideTo": "2022-06-23"
+  },
+  {
+    "cp": "3NYTZNEF20",
+    "discountPerc": -15,
+    "valideTo": "2022-07-23"
+  },
+  {
+    "cp": "3LANIMEH3",
+    "discountPerc": -8,
+    "valideTo": "2022-07-23"
+  },
+  {
+    "cp": "5LAECBEN4",
+    "discountPerc": -10,
+    "valideTo": "2022-07-15"
+  },
+  {
+    "cp": "9LAKDBEO9",
+    "discountPerc": -15,
+    "valideTo": "2022-08-23"
+  }
+]

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopely.ma | Cart</title>
+    <link rel="stylesheet" href="/incude/css/style.css" />
+    <link rel="stylesheet" href="/incude/css/iziToast.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/incude/img/icon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/incude/img/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/incude/img/icon/favicon-16x16.png">
+<link rel="manifest" href="/incude/img/icon/site.webmanifest">
+<link rel="mask-icon" href="/incude/img/icon/safari-pinned-tab.svg" color="#0898c1">
+<link rel="shortcut icon" href="/incude/img/icon/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/incude/img/icon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+    <style>
+      /* Proceed to Checkout */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0px 20px 10px 10px;
+  border: 1px solid #888;
+  width: 95%;
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  right: -8px;
+  top: -10px;
+  color: #fefdfe;
+  font-size: 25px;
+  font-weight: bold;
+  background: #6170c1;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 0px 0px 0 6px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* /cart.html */
+/*remove items  btn*/
+button.material-icons-outlined.remove_item {
+  border: none;
+  color: #3f51b5;
+}
+button.material-icons-outlined.remove_item:hover{
+  border: none;
+  color: #ff2e36;
+}
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-35 {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+}
+
+.col-40 {
+  -ms-flex: 40%; /* IE10 */
+  flex: 40%;
+}
+
+.col-45 {
+  -ms-flex: 45%; /* IE10 */
+  flex: 45%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+.col-70 {
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+}
+.col-65 {
+  -ms-flex: 65%; /* IE10 */
+  flex: 65%;
+}
+.col-25,
+.col-30,
+.col-40,
+.col-45,
+.col-50,
+.col-55,
+.col-60,
+.col-65,
+.col-75 {
+  padding: 0 10px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 15px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input.cbill {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 1em rgb(0 0 0 / 6%);
+  border-radius: 25px;
+}
+
+.label {
+  margin-bottom: 10px;
+  display: block;
+  padding: 0 0 0 10px;
+}
+
+h3.h_bill {
+  color: #565c70;
+  font-size: 15px;
+}
+.hbill {
+  padding: 10px 0 0 0;
+}
+hr.hr {
+  margin: 0 0 15px 0;
+}
+span.total_p {
+  color: #6170c0;
+  float: right;
+  font-size: 15px;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+input.normal.bill {
+  display: block;
+  margin: 10px 0 0 0;
+}
+span.price {
+  float: right;
+  color: grey;
+}
+
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+
+/* mrthod paiment  */
+
+:root {
+  --color-background: #fae3ea;
+  --color-primary: #fc8080;
+  --font-family-base: Poppin, sans-serif;
+  --font-size-h1: 1.25rem;
+  --font-size-h2: 1rem;
+}
+
+address {
+  font-style: normal;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  font-weight: 600;
+  margin-block-end: 0.5em;
+  padding: 0;
+}
+
+input {
+  border: 0;
+  color: inherit;
+  font: inherit;
+}
+
+input[type="radio"] {
+  accent-color: var(--color-primary);
+}
+
+table.table {
+  border-collapse: collapse;
+  inline-size: 100%;
+  color: #424242;
+}
+
+tbody.tbody {
+}
+
+td.td {
+  padding-block: 0.125em;
+}
+
+tfoot.tfoot {
+  font-weight: 600;
+}
+
+.align {
+  display: grid;
+  place-items: center;
+}
+
+.pbutton {
+  align-items: center;
+  background-color: var(--color-primary);
+  border-radius: 999em;
+  color: #fff;
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+  padding-block: 0.75em;
+  padding-inline: 1em;
+  transition: 0.3s;
+}
+
+.button:focus,
+.button:hover {
+  background-color: #e96363;
+}
+
+.button--full {
+  inline-size: 100%;
+}
+
+.form {
+  display: grid;
+  gap: 2em;
+}
+
+.form__radios {
+  display: grid;
+  gap: 1em;
+}
+
+.form__radio {
+  align-items: center;
+  background-color: #fefdfe;
+  border-radius: 1em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.0625);
+  display: flex;
+  padding: 1em;
+}
+
+.form__radio label {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  gap: 1em;
+  margin-bottom: 0;
+}
+
+img.loaded {
+  height: 100%;
+  width: 35px;
+}
+
+.pMethod {
+  overflow: auto;
+  padding: 20px;
+}
+
+    </style>
+  </head>
+  <body>
+    <section id="header">
+      <a href="/">
+        <img class="logo" src="/incude/img/logo.png" alt="logo" />
+      </a>
+      <div>
+        <ul id="navbar" class="inactive">
+          <li>
+            <a  href="/">Home</a>
+          </li>
+          <li>
+            <a href="/shop.html">Shop</a>
+          </li>
+          <li>
+            <a href="/blog.html">Blog</a>
+          </li>
+          <li>
+            <a href="/about.html">About</a>
+          </li>
+          <li>
+            <a href="/contact.html">Contact</a>
+          </li>
+          <li>
+            <a class="active" id="cart" href="/cart.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span id="countCart">0</span>
+            </a>
+          </li>
+          <li>
+            <a id="fave" href="/myList.html">
+              <i class="material-icons-outlined">favorite_border</i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div id="mobile">
+        <a href="/cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        <i id="bar" class="fa-solid fa-bars"></i>
+        <span id="count2">0</span>
+      </div>
+    </section>
+
+    <section id="cart_banner" class="about-header">
+      <h2>#CartShopping</h2>
+      <p>Lorem Ipsum dolor dite amet ,consecteur</p>
+    </section>
+<div id="allCardItems">
+      <section id="card" class="section-p1">
+      <table width="100%">
+        <thead>
+          <tr>
+            <td>Remove</td>
+            <td>Image</td>
+            <td>Product</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Size</td>
+            <td>Subtotal</td>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </section>
+
+<div class="include" id='emptyHtmlBlock' w3-include-html="emptyCart.html" style="display: none;"></div>
+    
+    <section id="card-add" class="section-p1">
+      <div id="copon">
+        <h3>Apply Coupon</h3>
+        <div>
+          <input type="text" name="" id="InputCoupon" />
+          <button id="btnCoupon" class="normal">apply</button>
+        </div>
+      </div>
+      <section id="subtotal">
+        <h3>Cart Totals</h3>
+        <table>
+          <tr>
+            <td>Cart Subtotal</td>
+            <td id="Cart_Subtotal">0</td>
+          </tr>
+          <tr>
+            <td>Shipping</td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td>Discount <span id="perc">0</span>%</td>
+            <td id="Reductionv">0</td>
+          </tr>
+          <tr>
+            <td><strong>Total</strong></td>
+            <td><strong id="Total">0</strong></td>
+          </tr>
+        </table>
+        <button id="BtnCheckoutModal" class="normal">
+          Proceed to Checkout
+        </button>
+      </section>
+
+      <div id="CheckoutModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span><br>
+<div class="row">
+  <div class="col-65">
+    <div class="container">
+      <form action="" method="dialog" id="fCheckout">
+
+        <div class="row">
+          <div class="col-50">
+            <h3 class="hbill">Billing Address</h3>
+            <div class="row" style=" padding: 15px 0 0 0; ">
+              <div class="col-50">
+                <label class="label" for="fname">First Name</label>
+                <input class="cbill"  type="text" id="fname" name="fname" placeholder="first name" required>
+              </div>
+              <div class="col-50">
+                <label class="label"  for="lname">Last Name</label>
+                <input class="cbill"  type="text" id="lname" name="lname" placeholder="Last name" required>
+              </div>
+            </div>
+
+            <label class="label"  for="email"> Email</label>
+            <input class="cbill"  type="text" id="email" name="email" placeholder="john@example.com" required>
+            <label class="label"  for="adr">Address</label>
+            <input class="cbill"  type="text" id="adr" name="address" placeholder="address" required>            
+            <label class="label"  for="phon">Number Phone</label>
+            <input class="cbill" type="tel" id="phon" name="Phone" placeholder="Phone" required>
+            <div class="row">
+              <div class="col-50">            
+            <label class="label"  for="city"> City</label>
+            <input class="cbill" type="text" id="city" name="city" placeholder="Tanger" required>
+
+              
+              </div>
+              <div class="col-50">
+                <label class="label"  for="zip">Zip</label>
+                <input class="cbill" type="number" id="zip" name="zip" placeholder="10001" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-35">
+            <h3 class="hbill">Payment Method</h3>
+<div class="pMethod">
+
+    <fieldset>
+
+      <div class="form__radios">
+        <div class="form__radio">
+          <label for="visa">
+            <img width="20" height="20" src="/incude/img/pay/visa.png" alt="" title="" class="loaded"> Visa Payment</label>
+          <input checked id="visa" name="payment-method" type="radio" />
+        </div>
+
+        <div class="form__radio">
+          <label for="paypal"><img width="20" height="20" src="/incude/img/pay/paypal.png" alt="" title="" class="loaded">
+PayPal</label>
+          <input id="paypal" name="payment-method" type="radio" />
+        </div>
+
+        <div class="form__radio">
+          <label for="mastercard">
+            <img width="20" height="20" src="/incude/img/pay/master.png" alt="" title="" class="loaded">
+Master Card</label>
+          <input id="mastercard" name="payment-method" type="radio" />
+        </div>
+
+                <div class="form__radio">
+          <label for="delivery">
+<img width="20" height="40px" src="/incude/img/pay/cach.png" alt="" title="" class="loaded">cash on delivery</label>
+          <input id="delivery" name="payment-method" type="radio" />
+        </div>
+      </div>
+    </fieldset>
+
+</div>
+
+          </div>
+
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+        <input value="Continue to checkout" class="normal bill" id="ConfermCheckout">
+      </form>
+    </div>
+  </div>
+
+  <div class="col-35">
+    <div class="container">
+      <h3 class="hbill">Shopping Bill</h3>
+      <div id="checkoutProdList">
+
+      </div><br>
+      <hr class="hr">
+
+      <table class="table">
+        <tbody class="tbody">
+          <tr>
+            <td class="td">Shipping fee</td>
+            <td class="td" align="right">free</td>
+          </tr>
+          <tr>
+            <td class="td">Discount <c id="c_disc_p"></c>%</td>
+            <td class="td" align="right"><c id="c_disc"></c> MAD</td>
+          </tr>
+          <tr>
+            <td class="td">Price Total</td>
+            <td class="td" align="right"><c id="c_total"></c> MAD</td>
+          </tr>
+        </tbody>
+        <tfoot class="tfoot">
+          <tr>
+            <td class="td">Total</td>
+            <td class="td" align="right"><c id="T_total"></c> MAD</td>
+          </tr>
+        </tfoot>
+      </table>
+
+    </div>
+  </div>
+</div>
+    </section>
+</div>
+
+    <div class="include" w3-include-html="newsletter.html"></div>
+    <div class="include" w3-include-html="footer.html"></div>
+
+    <script
+      src="https://kit.fontawesome.com/fee69a7a67.js"
+      crossorigin="anonymous"
+    ></script>
+            <script src="/incude/js/w3.js"></script>
+
+    <script src="/incude/js/script.js" crossorigin="anonymous"></script>
+    <script src="/incude/js/blog.js" crossorigin="anonymous"></script>
+    <script src="/incude/js/iziToast.min.js" type="text/javascript"></script>
+    <script src="/incude/js/cart.js" type="text/javascript"></script>
+
+  </body>
+</html>

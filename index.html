@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopely.ma | Home page</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/incude/img/icon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/incude/img/icon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/incude/img/icon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/incude/img/icon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/incude/img/icon/safari-pinned-tab.svg"
+      color="#0898c1"
+    />
+    <link rel="shortcut icon" href="/incude/img/icon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta
+      name="msapplication-config"
+      content="/incude/img/icon/browserconfig.xml"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/incude/css/style.css" />
+    <link rel="stylesheet" href="/incude/css/iziToast.min.css" />
+    <script src="/incude/js/w3.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <section id="header">
+      <a href="/">
+        <img class="logo" src="/incude/img/logo.png" alt="logo" />
+      </a>
+      <div>
+        <ul id="navbar" class="inactive">
+          <li>
+            <a class="active" href="/">Home</a>
+          </li>
+          <li>
+            <a href="/shop.html">Shop</a>
+          </li>
+          <li>
+            <a href="/blog.html">Blog</a>
+          </li>
+          <li>
+            <a href="/about.html">About</a>
+          </li>
+          <li>
+            <a href="/contact.html">Contact</a>
+          </li>
+          <li>
+            <a id="cart" href="/cart.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span id="countCart">0</span>
+            </a>
+          </li>
+          <li>
+            <a id="fave" href="/myList.html">
+              <i class="material-icons-outlined">favorite_border</i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div id="mobile">
+        <a href="/cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        <i id="bar" class="fa-solid fa-bars"></i>
+        <span id="count2">0</span>
+      </div>
+    </section>
+
+    <section id="su_bady">
+      <section id="hero">
+        <h4>Trade-in-offer</h4>
+        <h2>Super value deals</h2>
+        <h1>On all Products</h1>
+        <p>Save more with coupons & up to 70% Off!</p>
+        <a class="button_hero" href="/shop.html">Shop Now</a>
+      </section>
+
+      <div class="include" w3-include-html="feature.html"></div>
+
+      <section class="section-p1 prod_section">
+        <h2 class="p">Featured Products</h2>
+        <div class="filter" id="filter1">
+          <button class="c2" onclick="ShowFeatursPro()">All</button>
+          <button class="c2" onclick="ShowFeatursPro('Womens')">Women</button>
+          <button class="c2" onclick="ShowFeatursPro('Mans')">Men</button>
+          <button class="c2" onclick="ShowFeatursPro('Kids')">Kids</button>
+        </div>
+
+        <div class="pro-container" id="pro_container1"></div>
+      </section>
+
+      <section id="banner" class="section-m1">
+        <h4>Summer Lookbook</h4>
+        <h2>FLASH SALE <sapn>70% OFF</sapn> All T-Shirts & Accessories</h2>
+        <button href="/shop.html">Shop Now</button>
+      </section>
+
+      <section class="section-p1 prod_section">
+        <h2 class="p">New Arrivals</h2>
+        <div class="filter" id="filter2">
+          <button class="c2" onclick="ShowArrivalsPro()">All</button>
+          <button class="c2" onclick="ShowArrivalsPro('Womens')">Women</button>
+          <button class="c2" onclick="ShowArrivalsPro('Mans')">Men</button>
+          <button class="c2" onclick="ShowArrivalsPro('Kids')">Kids</button>
+        </div>
+        <div class="pro-container" id="pro_container2"></div>
+      </section>
+
+      <section id="sm-banner" class="section-p1">
+        <div class="banner-box">
+          <h4>Crazy deals</h4>
+          <h2>Buy 1 get 1 free</h2>
+          <span>The best classic dress is on sale at care</span>
+          <button class="c1">Learn More</button>
+        </div>
+
+        <div class="banner-box banner-box2">
+          <h4>Spring summer</h4>
+          <h2>Upcoming season</h2>
+          <span>The best classic dress is on sale at care</span>
+          <button class="c2">Collection</button>
+        </div>
+      </section>
+      <section class="section-p1 prod_section">
+        <h2 class="p">Top Products</h2>
+        <div class="filter" id="filter3">
+          <button class="c2" onclick="ShowTopPro()">All</button>
+          <button class="c2" onclick="ShowTopPro('Womens')">Women</button>
+          <button class="c2" onclick="ShowTopPro('Mans')">Men</button>
+          <button class="c2" onclick="ShowTopPro('Kids')">Kids</button>
+        </div>
+        <div class="pro-container" id="pro_top"></div>
+      </section>
+
+      <section id="banner3"></section>
+    </section>
+
+    <div class="include" w3-include-html="newsletter.html"></div>
+    <div class="include" w3-include-html="footer.html"></div>
+
+    <script
+      src="https://kit.fontawesome.com/fee69a7a67.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/incude/js/script.js" crossorigin="anonymous"></script>
+  </body>
+</html>

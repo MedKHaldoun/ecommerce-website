@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopely.ma | My Favorites</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/incude/img/icon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/incude/img/icon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/incude/img/icon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/incude/img/icon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/incude/img/icon/safari-pinned-tab.svg"
+      color="#0898c1"
+    />
+    <link rel="shortcut icon" href="/incude/img/icon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta
+      name="msapplication-config"
+      content="/incude/img/icon/browserconfig.xml"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/incude/css/style.css" />
+    <script src="/incude/js/w3.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <style>
+      .hero_Shop {
+        background-image: url("/incude/img/back/myfave.jpg") !important;
+        background-position: center top 28% !important;
+        padding: 2rem !important;
+        display: flex !important;
+        justify-content: center !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding-left: 10% !important;
+        height: 40vh !important;
+        width: 100% !important;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="header">
+      <a href="/">
+        <img class="logo" src="/incude/img/logo.png" alt="logo" />
+      </a>
+      <div>
+        <ul id="navbar" class="inactive">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/shop.html">Shop</a>
+          </li>
+          <li>
+            <a href="/blog.html">Blog</a>
+          </li>
+          <li>
+            <a href="/about.html">About</a>
+          </li>
+          <li>
+            <a href="/contact.html">Contact</a>
+          </li>
+          <li>
+            <a id="cart" href="/cart.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span id="countCart">0</span>
+            </a>
+          </li>
+          <li>
+            <a class="active" id="fave" href="/myList.html">
+              <i class="material-icons-outlined">favorite_border</i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div id="mobile">
+        <a href="/cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        <i id="bar" class="fa-solid fa-bars"></i>
+        <span id="count2">0</span>
+      </div>
+    </section>
+
+    <section id="hero_Shop" class="hero_Shop">
+      <h2>#Favorites</h2>
+      <p>Your Favorites Products</p>
+    </section>
+
+    <section id="product1" class="section-p1 prod_section">
+      <div class="pro-container" id="shop_fave"></div>
+      <div
+        class="include"
+        id="emptyHtmlBlock"
+        w3-include-html="emptyFave.html"
+        style="display: none"
+      ></div>
+      <!--  <section id="pagination" class="section-p1 section-m1">
+        Your lists
+        Favorites
+
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#"><i class="fa-solid fa-right-long"></i></a>
+      </section>
+      -->
+    </section>
+    <!-- fixe content -->
+    <div class="include" w3-include-html="newsletter.html"></div>
+
+    <div class="include" w3-include-html="footer.html"></div>
+
+    <script
+      src="https://kit.fontawesome.com/fee69a7a67.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/incude/js/script.js" crossorigin="anonymous"></script>
+    <script src="/incude/js/myfave.js"></script>
+  </body>
+</html>
