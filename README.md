@@ -1,2 +1,2 @@
-# shopely.ma-ecommerce-website-
-shopely.ma : ecommerce website (JavaScript vanilla )
+# ecommerce website
+Shopely.ma is an e-commerce website built only using (JavaScript vanilla ) HTML/CSS
